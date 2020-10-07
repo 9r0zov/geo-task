@@ -15,10 +15,14 @@ public class PointDTO implements IPoint {
     @Min(-90)
     @Max(90)
     @NotNull
-    private Double x;
+    private Double latitude;
     @Min(-180)
     @Max(180)
     @NotNull
-    private Double y;
+    private Double longitude;
 
+    @Override
+    public String toString() {
+        return String.format("[%s, %s]", longitude, latitude);
+    }
 }

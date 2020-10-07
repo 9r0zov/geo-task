@@ -13,9 +13,9 @@ public class RectangleValidator implements ConstraintValidator<ValidRect, IRect>
 
     @Override
     public boolean isValid(IRect rect, ConstraintValidatorContext context) {
-        return Math.hypot(rect.getLeftBottom().getX() - rect.getRightTop().getX(),
-                rect.getLeftBottom().getY() - rect.getRightTop().getY()) ==
-                Math.hypot(rect.getLeftTop().getX() - rect.getRightBottom().getX(),
-                        rect.getLeftTop().getY() - rect.getRightBottom().getY());
+        return Math.hypot(rect.getLeftBottom().getLatitude() - rect.getRightTop().getLatitude(),
+                rect.getLeftBottom().getLongitude() - rect.getRightTop().getLongitude()) ==
+                Math.hypot(rect.getLeftTop().getLatitude() - rect.getRightBottom().getLatitude(),
+                        rect.getLeftTop().getLongitude() - rect.getRightBottom().getLongitude());
     }
 }

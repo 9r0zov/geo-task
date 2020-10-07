@@ -5,10 +5,6 @@ services:
     image: mongo
     ports:
       - 27017:27017
-    expose:
-      - "27017"
-    environment:
-      - AUTH=no
 
   springboot:
     build: .

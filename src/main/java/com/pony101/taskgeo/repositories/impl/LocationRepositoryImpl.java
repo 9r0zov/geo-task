@@ -29,11 +29,8 @@ public class LocationRepositoryImpl implements LocationRepository {
     public List<Vehicle> searchInsideRect(IPoint topLeft, IPoint topRight, IPoint bottomRight, IPoint bottomLeft) {
         final BasicQuery query = new BasicQuery(String.format(
                 "{location: {$geoWithin: {$geometry: {type : 'Polygon' ," +
-                        "coordinates: [ [ [ %s, %s ], [ %s, %s ], [ %s, %s ], [ %s, %s ] ] ]}}}}",
-                topLeft.getX(), topLeft.getY(),
-                topRight.getX(), topRight.getY(),
-                bottomRight.getX(), bottomRight.getY(),
-                bottomLeft.getX(), bottomLeft.getY()));
+                        "coordinates: [ [ %s, %s, %s, %s, %s ] ]}}}}",
+                topLeft, topRight, bottomRight, bottomLeft, topLeft));
         return mongoTemplate.find(query, Vehicle.class);
     }
 

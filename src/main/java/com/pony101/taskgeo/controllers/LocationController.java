@@ -6,8 +6,6 @@ import com.pony101.taskgeo.dto.SimpleRectDTO;
 import com.pony101.taskgeo.dto.VehicleDTO;
 import com.pony101.taskgeo.services.LocationService;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
