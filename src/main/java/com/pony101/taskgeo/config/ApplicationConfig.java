@@ -1,8 +1,12 @@
 package com.pony101.taskgeo.config;
 
+import com.fasterxml.classmate.TypeResolver;
+import com.pony101.taskgeo.dto.SimpleRectDTO;
 import com.pony101.taskgeo.dto.convertion.VehicleDTOToVehicleConverter;
 import com.pony101.taskgeo.dto.convertion.VehicleToVehicleDTOConverter;
+import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;

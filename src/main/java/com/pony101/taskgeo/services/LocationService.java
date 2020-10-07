@@ -18,7 +18,7 @@ public class LocationService {
     }
 
     public List<Vehicle> list(IRect rect) {
-        return locationRepository.searchInsideRect();
+        return locationRepository.searchInsideRect(rect.getLeftTop(), rect.getRightTop(), rect.getRightBottom(), rect.getLeftBottom());
     }
 
     public List<Vehicle> list(ISimpleRect rect) {

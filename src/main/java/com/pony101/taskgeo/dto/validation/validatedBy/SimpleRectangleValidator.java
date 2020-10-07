@@ -13,6 +13,6 @@ public class SimpleRectangleValidator implements ConstraintValidator<ValidSimple
 
     @Override
     public boolean isValid(ISimpleRect value, ConstraintValidatorContext context) {
-        return false;
+        return true;
     }
 }

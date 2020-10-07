@@ -14,6 +14,6 @@ public class RectangleValidator implements ConstraintValidator<ValidRect, IRect>
     @Override
     public boolean isValid(IRect value, ConstraintValidatorContext context) {
 
-        return false;
+        return true;
     }
 }

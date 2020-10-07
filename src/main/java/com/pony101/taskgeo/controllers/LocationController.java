@@ -1,11 +1,15 @@
 package com.pony101.taskgeo.controllers;
 
+import com.pony101.taskgeo.controllers.model.BaseResponse;
 import com.pony101.taskgeo.dto.RectDTO;
 import com.pony101.taskgeo.dto.SimpleRectDTO;
 import com.pony101.taskgeo.dto.VehicleDTO;
 import com.pony101.taskgeo.services.LocationService;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
+import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -21,15 +25,12 @@ import java.util.stream.Collectors;
 @Api(value = "Location Controller")
 @RestController()
 @RequestMapping("/search/vehicles")
+@RequiredArgsConstructor
+@BaseResponse
 public class LocationController {
 
-    private LocationService locationService;
-    private ModelMapper mapper;
-
-    public LocationController(LocationService locationService, ModelMapper mapper) {
-        this.locationService = locationService;
-        this.mapper = mapper;
-    }
+    private final LocationService locationService;
+    private final ModelMapper mapper;
 
     @ApiOperation(value = "Search vehicle bounded by latitude and longitude from both sides", produces = "application/json",
             response = VehicleDTO.class, responseContainer = "List")

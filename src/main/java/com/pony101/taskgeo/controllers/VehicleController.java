@@ -1,10 +1,12 @@
 package com.pony101.taskgeo.controllers;
 
+import com.pony101.taskgeo.controllers.model.BaseResponse;
 import com.pony101.taskgeo.dto.VehicleDTO;
 import com.pony101.taskgeo.models.Vehicle;
 import com.pony101.taskgeo.services.VehicleService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -20,15 +22,12 @@ import org.springframework.web.bind.annotation.RestController;
 @Api(value = "Vehicle Controller")
 @RestController
 @RequestMapping("/vehicles")
+@RequiredArgsConstructor
+@BaseResponse
 public class VehicleController {
 
-    private VehicleService vehicleService;
-    private ModelMapper mapper;
-
-    public VehicleController(VehicleService vehicleService, ModelMapper mapper) {
-        this.vehicleService = vehicleService;
-        this.mapper = mapper;
-    }
+    private final VehicleService vehicleService;
+    private final ModelMapper mapper;
 
     @ApiOperation(value = "Add new record of vehicle location", produces = "application/json", response = VehicleDTO.class)
     @PostMapping

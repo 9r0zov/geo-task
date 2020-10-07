@@ -7,6 +7,6 @@ spring:
           auto: update
   data:
     mongodb:
-      uri: mongodb://webflux:password@localhost:27017/geotask
+      uri: mongodb://localhost:27017/geotask
 server:
   port: 9000

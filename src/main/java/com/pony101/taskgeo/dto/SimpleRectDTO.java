@@ -5,6 +5,8 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
 @Getter
@@ -13,16 +15,20 @@ import javax.validation.constraints.NotNull;
 public class SimpleRectDTO implements ISimpleRect {
 
     @NotNull
-    @ApiModelProperty(required = true, position = 1)
+    @Min(0)
+    @Max(90)
     private Double minLat;
     @NotNull
-    @ApiModelProperty(required = true, position = 2)
+    @Min(0)
+    @Max(90)
     private Double maxLat;
     @NotNull
-    @ApiModelProperty(required = true, position = 3)
+    @Min(0)
+    @Max(90)
     private Double minLong;
     @NotNull
-    @ApiModelProperty(required = true, position = 4)
+    @Min(0)
+    @Max(90)
     private Double maxLong;
 
 }
