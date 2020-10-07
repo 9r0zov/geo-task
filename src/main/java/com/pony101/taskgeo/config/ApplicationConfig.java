@@ -1,15 +1,15 @@
 package com.pony101.taskgeo.config;
 
-import com.fasterxml.classmate.TypeResolver;
-import com.pony101.taskgeo.dto.SimpleRectDTO;
 import com.pony101.taskgeo.dto.convertion.VehicleDTOToVehicleConverter;
 import com.pony101.taskgeo.dto.convertion.VehicleToVehicleDTOConverter;
+import com.pony101.taskgeo.models.Vehicle;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.index.GeospatialIndex;
 import org.springframework.http.ResponseEntity;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -17,10 +17,20 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+import javax.annotation.PostConstruct;
+
 @Configuration
 @EnableSwagger2
 @ComponentScan("com.pony101.taskgeo")
+@RequiredArgsConstructor
 public class ApplicationConfig {
+
+    private final MongoTemplate mongoTemplate;
+
+    @PostConstruct
+    public void init() {
+        mongoTemplate.indexOps(Vehicle.class).ensureIndex(new GeospatialIndex("location"));
+    }
 
     @Bean
     public ModelMapper modelMapper() {

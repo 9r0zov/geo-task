@@ -17,7 +17,7 @@ public class VehicleService {
     }
 
     public Vehicle save(Vehicle vehicle) {
-//        vehicle.setId(UUID.randomUUID().toString());
+        vehicle.setId(UUID.randomUUID().toString());
         return vehicleRepository.save(vehicle);
     }
 

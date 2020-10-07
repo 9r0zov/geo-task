@@ -11,8 +11,8 @@ public class VehicleToVehicleDTOConverter implements Converter<Vehicle, VehicleD
         Vehicle source = context.getSource();
         VehicleDTO dto = new VehicleDTO();
         dto.setId(source.getId());
-        dto.setLatitude(source.getLocation()[0]);
-        dto.setLongitude(source.getLocation()[1]);
+        dto.setLongitude(source.getLocation()[0]);
+        dto.setLatitude(source.getLocation()[1]);
         return dto;
     }
 }

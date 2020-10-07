@@ -11,12 +11,12 @@ import javax.validation.constraints.NotNull;
 @Setter
 public class PointDTO implements IPoint {
 
-    @Min(0)
+    @Min(-90)
     @Max(90)
     @NotNull
     private Double x;
-    @Min(0)
-    @Max(90)
+    @Min(-180)
+    @Max(180)
     @NotNull
     private Double y;
 
