@@ -1,7 +1,7 @@
 package com.pony101.taskgeo.services;
 
-import com.pony101.taskgeo.dto.IRect;
-import com.pony101.taskgeo.dto.ISimpleRect;
+import com.pony101.taskgeo.models.IRect;
+import com.pony101.taskgeo.models.ISimpleRect;
 import com.pony101.taskgeo.models.Vehicle;
 import com.pony101.taskgeo.repositories.LocationRepository;
 import org.springframework.stereotype.Service;

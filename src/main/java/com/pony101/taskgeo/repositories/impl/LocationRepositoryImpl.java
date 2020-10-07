@@ -1,9 +1,8 @@
 package com.pony101.taskgeo.repositories.impl;
 
-import com.pony101.taskgeo.dto.IPoint;
+import com.pony101.taskgeo.models.IPoint;
 import com.pony101.taskgeo.models.Vehicle;
 import com.pony101.taskgeo.repositories.LocationRepository;
-import org.springframework.data.geo.Point;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.BasicQuery;
 import org.springframework.stereotype.Repository;

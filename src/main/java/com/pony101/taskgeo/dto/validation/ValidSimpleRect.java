@@ -15,7 +15,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Target({ElementType.TYPE})
 public @interface ValidSimpleRect {
 
-    String message() default "Wrong rectangle";
+    String message() default "Wrong bounds. min-params have to be less that max-params";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
 

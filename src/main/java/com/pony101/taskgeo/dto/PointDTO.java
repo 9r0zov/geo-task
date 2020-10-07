@@ -1,5 +1,6 @@
 package com.pony101.taskgeo.dto;
 
+import com.pony101.taskgeo.models.IPoint;
 import lombok.Getter;
 import lombok.Setter;
 

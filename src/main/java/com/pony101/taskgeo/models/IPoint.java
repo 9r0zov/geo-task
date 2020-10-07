@@ -1,4 +1,4 @@
-package com.pony101.taskgeo.dto;
+package com.pony101.taskgeo.models;
 
 public interface IPoint {
 

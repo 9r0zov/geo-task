@@ -15,7 +15,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Target({ElementType.TYPE})
 public @interface ValidRect {
 
-    String message() default "Wrong rectangle";
+    String message() default "Diagonals of rectangle have to be equal";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
 

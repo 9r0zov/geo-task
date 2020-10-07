@@ -1,6 +1,7 @@
 package com.pony101.taskgeo.dto;
 
 import com.pony101.taskgeo.dto.validation.ValidSimpleRect;
+import com.pony101.taskgeo.models.ISimpleRect;
 import lombok.Getter;
 import lombok.Setter;
 

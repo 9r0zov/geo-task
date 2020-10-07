@@ -1,6 +1,6 @@
 package com.pony101.taskgeo.repositories;
 
-import com.pony101.taskgeo.dto.IPoint;
+import com.pony101.taskgeo.models.IPoint;
 import com.pony101.taskgeo.models.Vehicle;
 
 import java.util.List;

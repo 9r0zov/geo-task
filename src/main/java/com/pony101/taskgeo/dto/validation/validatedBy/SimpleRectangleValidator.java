@@ -1,6 +1,6 @@
 package com.pony101.taskgeo.dto.validation.validatedBy;
 
-import com.pony101.taskgeo.dto.ISimpleRect;
+import com.pony101.taskgeo.models.ISimpleRect;
 import com.pony101.taskgeo.dto.validation.ValidSimpleRect;
 
 import javax.validation.ConstraintValidator;
@@ -12,7 +12,8 @@ public class SimpleRectangleValidator implements ConstraintValidator<ValidSimple
     }
 
     @Override
-    public boolean isValid(ISimpleRect value, ConstraintValidatorContext context) {
-        return true;
+    public boolean isValid(ISimpleRect simpleRect, ConstraintValidatorContext context) {
+        return simpleRect.getMinLat() < simpleRect.getMaxLat()
+                && simpleRect.getMinLong() < simpleRect.getMaxLong();
     }
 }
